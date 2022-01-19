@@ -7,23 +7,29 @@
     <div id="root"></div>
 </body>
 <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
-<script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 <script type="text/babel">
     // react => engine
     // react dom => React Element를 HTML에 두는 역할
     const root = document.getElementById("root");
-    const Title = () => (
-        <h3 onMouseEnter = {() => console.log("hi")}>
-            Hell I;m a title
-        </h3>
+
+    const App = () => {
+        const [counter, setCounter] = React.useState(0);
+        // useState returns a pair: the current state value and a function that lets you update it
+        const onClick = () => {
+            setCounter(counter + 1);
+           // modifier은 
+        }
+            return (
+            <div>
+                <h3>Total Click : {counter}</h3>
+                <button onClick = {onClick}>Click me</button>
+            </div>
         );
-    const Button = () => (
-        <button onClick={()=> console.log("bye")}>
-            Click me
-        </button>
-        );
-    const Container = <div><Title/><Button/></div>
-    ReactDOM.render(Container, root);
+    }
+    // component를 사용하려면 component를 함수로 만들어줘야함
+
+    ReactDOM.render(<App/>, root);
 </script>
-</html>
+</html
