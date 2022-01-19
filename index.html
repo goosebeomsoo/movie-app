@@ -20,13 +20,37 @@
         const onClick = () => {
             // setCounter(counter + 1);
             // modifier은 
-            setCoutner((current) => current + 1);
+            setCounter((current) => current + 1);
             // 확실한 방법으로 이전값을 이용한 현재값을 도출해낼 수 있음
+        }
+        const [minutes, setMinutes] = React.useState();
+        const onChange = (event) => {
+            setMinutes(event.target.value)
         }
             return (
             <div>
-                <h3>Total Click : {counter}</h3>
-                <button onClick = {onClick}>Click me</button>
+                <div>
+                    <h1>Total Click : {counter}</h1>
+                    <button onClick = {onClick}>Click me</button>
+                </div>
+                <div>
+                    <h1>Super Convertor</h1>
+                    <label htmlFor="minutes">Minutes</label>
+                    <input 
+                        id="minutes" 
+                        value={minutes} 
+                        placeholder="Minutes" 
+                        type="number"
+                        onChange = {onChange}
+                        />
+                    <h4>You want convert value : {minutes}</h4>
+                    <label htmlFor="hours">Hours</label>
+                    <input 
+                        id="hours" 
+                        placeholder="Hours" 
+                        type="number"
+                        />
+                </div>
             </div>
         );
     };
