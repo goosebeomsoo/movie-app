@@ -18,8 +18,10 @@
         const [counter, setCounter] = React.useState(0);
         // useState returns a pair: the current state value and a function that lets you update it
         const onClick = () => {
-            setCounter(counter + 1);
-           // modifier은 
+            // setCounter(counter + 1);
+            // modifier은 
+            setCoutner((current) => current + 1);
+            // 확실한 방법으로 이전값을 이용한 현재값을 도출해낼 수 있음
         }
             return (
             <div>
@@ -27,9 +29,9 @@
                 <button onClick = {onClick}>Click me</button>
             </div>
         );
-    }
+    };
     // component를 사용하려면 component를 함수로 만들어줘야함
 
     ReactDOM.render(<App/>, root);
 </script>
-</html
+</html>
